@@ -66,8 +66,8 @@ public class RoomGrid {
 		return true;
 		
 	}
-	public GridBlock getEntranceBlock() {
-		return Blocks[getMaxX()/2][0];
+	public synchronized GridBlock getEntranceBlock() {
+			return Blocks[getMaxX()/2][0];
 	}
 	
 	public GridBlock getBlock(int i, int j) {  //return block associated with grid position

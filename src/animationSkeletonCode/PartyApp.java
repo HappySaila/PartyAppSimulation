@@ -9,6 +9,8 @@ import java.io.IOException;
 
 import java.util.Scanner;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 //model is separate from the view.
 class outOfGridBoundsException extends Exception {
 	   public outOfGridBoundsException(String msg){
@@ -35,6 +37,9 @@ public class PartyApp {
 	static RoomPanel w;
 	static RoomGrid grid;
 	static CounterDisplay counterD ;
+
+	public static AtomicBoolean pause = new AtomicBoolean(false);
+	public static int roomLimit;
 
 	
 	
@@ -82,8 +87,8 @@ public class PartyApp {
 					done =false;
 	
 			    		createThreads();
-			        
-			    		//start threads one at a time
+						pause.set(false); //game is now active and running
+						//start threads one at a time
 			      	for (int i=0;i<noPeople;i++) {
 			      		personMover[i].start();
 			      	}
@@ -98,6 +103,20 @@ public class PartyApp {
 		      public void actionPerformed(ActionEvent e) {
 		    	  	//TODO fill in code here to create
 		    	  // pause/resume button that works
+				  synchronized (pause){
+					  if (pause.get()==false){
+						  //not paused and we want to pause the game
+						  pause.set(true);
+						  //game is now paused, change button label
+						  pauseB.setText("Resume");
+					  }else if(pause.get()==true){
+						  //the game is paused and we want to unpause
+						  pause.set(false);
+						  //game is now resumed
+						  pauseB.setText("Pause");
+						  pause.notifyAll();
+					  }
+				  }
 		      }
 		    });
 			
@@ -151,6 +170,7 @@ public class PartyApp {
 		noPeople=Integer.parseInt(args[0]);  //total people to enter room
 		gridX=Integer.parseInt(args[1]); // No. of X grid cells  
 		gridY=Integer.parseInt(args[2]); // No. of Y grid cells  
+		roomLimit=Integer.parseInt(args[3]);
 		//hardcoded exits
 		int [][] exits = {{0,(int) gridY/2-1},
 							{0,(int) gridY/2},  //two-cell wide door on left
@@ -168,7 +188,13 @@ public class PartyApp {
 		for (int i=0;i<noPeople;i++) {
 			persons[i]=new Person();
 		}
-
+		Scanner sc = new Scanner(System.in);
+		while (true){
+			sc.nextLine();
+			System.out.println("getting...");
+			System.out.println(grid.getEntranceBlock().getStatus());
+			System.out.println("done...");
+		}
 
 	}
 

@@ -4,14 +4,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class GridBlock {
 	static private int IDcounter=0;
-	private boolean occupied;
+	private AtomicBoolean occupied = new AtomicBoolean(false);
 	private final boolean isExit;
 	private final boolean isRefreshmentStation;
 	private int ID;
 	private int [] coords;
 	
 	GridBlock(boolean exitBlock, boolean refreshBlock) {
-		occupied=false;
+		occupied.set(false);
 		isExit=exitBlock;
 		isRefreshmentStation=refreshBlock;
 		synchronized (GridBlock.class) {
@@ -28,25 +28,30 @@ public class GridBlock {
 	public int getY() {return coords[1];}
 
 	
-	public void waitBlock()  {
-		occupied=true;
+	public synchronized void waitBlock()  {
+		//if the are holding the block
+			occupied.set(true);
 	}
 	
 	
-	public boolean getBlock() {
-		if (occupied==true) {
+	public synchronized boolean getBlock() {
+		if (occupied.get()==true) {
 			return false;
 		}
-		occupied=true;
+		occupied.set(true);
 		return true;
 	}
 		
-	public void releaseBlock() {
-		occupied=false;
+	public synchronized void releaseBlock() {
+		//once they have left the block
+		synchronized (PersonMover.entranceLock){
+			occupied.set(false);
+			PersonMover.entranceLock.notifyAll();
+		}
 	}
 	
 	public boolean getStatus() {
-		return occupied;	
+		return occupied.get();
 	}
 	
 	public boolean isExit() {

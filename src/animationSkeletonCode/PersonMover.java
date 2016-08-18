@@ -14,6 +14,9 @@ public class PersonMover extends Thread {
 	public volatile static boolean done=false; //add stop button
 	
 	private int ID; //thread ID for debugging
+
+	//my variables
+	public static Object entranceLock = new Object();
 	
 	PersonMover( Person janeDoe) {
 		thisPerson = janeDoe;
@@ -79,14 +82,26 @@ public class PersonMover extends Thread {
 		
 		try {
 			sleep(rand.nextInt(10000)); //time till arriving at party
+			//to make sure that people cant enter the party if the simulation is paused
+			synchronized (PartyApp.pause){
+				while(PartyApp.pause.get()==true){
+					PartyApp.pause.wait();
+				}
+			}
+
 			counter.personArrived(); //add to counter
-			
+
 			GridBlock firstBlock =grid.getEntranceBlock(); //enter through entrance
 			assert(firstBlock!=null);
-		
-			//below does not work - FIX
-			firstBlock.waitBlock(); //threads should wait until first blovk is free
-		
+
+			synchronized (entranceLock){
+				while(firstBlock.getStatus()==true || (counter.getInside()>=PartyApp.roomLimit)){
+					entranceLock.wait();
+				}
+				System.out.println("counter :"+counter.getInside()+"limit: "+PartyApp.roomLimit);
+				firstBlock.waitBlock(); //threads should wait until first block is free
+			}
+
 			thisPerson.initBlock(firstBlock);
 			counter.personEntered(); //add to counter
 			sleep(thisPerson.getSpeed());
@@ -94,8 +109,9 @@ public class PersonMover extends Thread {
 			done=true;
 		}
 
-		while ((!done)&&(thisPerson.inRoom())) {	
-			try {	
+		while ((!done)&&(thisPerson.inRoom())) {
+			//must lock all people here when the game is paused
+			try {
 				if (thisPerson.thirsty()) {
 					if (thisPerson.atRefreshmentStation()) {
 						sleep(thisPerson.getSpeed()*4);//drinking for a while
@@ -105,17 +121,17 @@ public class PersonMover extends Thread {
 				}
 				else if (thisPerson.atExit()) {
 					thisPerson.leave();
-				} 
+				}
 				else {
 					mingle();
 				}
 				sleep(thisPerson.getSpeed());
-			}			
-			
+			}
+
 			catch (InterruptedException e) {
-				System.out.println("Thread "+this.ID + "interrrupted."); 
+				System.out.println("Thread "+this.ID + "interrrupted.");
 				done=true;
-			} 
+			}
 		}
 		counter.personLeft(); //add to counter
 	

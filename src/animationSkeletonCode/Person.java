@@ -8,8 +8,8 @@ public class Person {
 	GridBlock currentBlock;
 		
 	private int movingSpeed;
-	private static int maxWait=1500;
-	private static int minWait=100;
+	private static int maxWait=15;
+	private static int minWait=1;
 	private int X;
 	private int Y;
 	
@@ -42,15 +42,24 @@ public class Person {
 	
 	public  boolean moveToBlock(GridBlock newBlock)  {
 		//System.out.println("Attempting transfer...from x,y"+X+","+Y +"to x,y"+newBlock.getX()+","+newBlock.getY()); //debug
-		if(newBlock.getBlock()!=false) {
-			currentBlock.releaseBlock();
-			initBlock(newBlock);
-			//System.out.println("Transfering... to x,y"+newBlock.getX()+","+newBlock.getY()); //debug
-			return true;
-		}	
-		else  {
-			//System.out.println("Transfer to x,y"+newBlock.getX()+","+newBlock.getY()); //debug
-			return false;
+		synchronized (PartyApp.pause){
+			while (PartyApp.pause.get()==true){
+				try {
+					PartyApp.pause.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			if(newBlock.getBlock()!=false) {
+				currentBlock.releaseBlock();
+				initBlock(newBlock);
+				//System.out.println("Transfering... to x,y"+newBlock.getX()+","+newBlock.getY()); //debug
+				return true;
+			}
+			else  {
+				//System.out.println("Transfer to x,y"+newBlock.getX()+","+newBlock.getY()); //debug
+				return false;
+			}
 		}
 	}
 

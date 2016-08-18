@@ -1,0 +1,50 @@
+Done
+• No guests must arrive before the start of the party.
+• After the start of the party, people arrive at random times.
+• Guest enter only through the entrance door.
+• After arrival, guests must wait until the entrance door is free (unoccupied)
+	before entering.
+• After entering the venue, guests must occupy a grid square, but no more than
+	one square.
+• People may not share grid squares (at most one person in each grid block).
+• A person may not move into a grid square that is currently occupied.
+• People can move to any unoccupied grid square in the room, but must move
+	one step at a time – they are not allowed to skip squares.
+• Guests do no leave until after they have had a beverage.
+• Guest may only leave through an exit door.
+• The pause button (not currently working) must pause/resume the simulation
+	correctly on successive presses
+• The counters must keep accurate track of the people waiting to enter the
+	venue, those inside, and those who have left.
+• [Once you have done the above] Limit the number people allowed into the
+room at one time and make people wait to enter if the room is full.
+
+
+Not Done
+
+
+• People should enter in the order in which they arrived.
+
+
+
+created pause object button of atomicBoolean
+pause button gets set to false when game is started to ensure game is not paused
+when game is paused button changes to resume and when unpaused changed to pause again
+
+there is a lock on the moveBlock method and on the pause button listener
+synchronise on entrance door so that threads cant arrive when game is paused
+when the game is pause the moveBlock method waits
+when unpaused the pause button listener notifies all to wake up
+
+created an atomicBoolean for occupied and created a lock on getBlock
+get, release and wait are all synchronized
+makes guest wait until entrance door is free before entering
+
+created a lock that only allows one thread to check if the door is occupied at a time.
+If the door is occupied it waits outside the lock to check next.
+if the lock is not occupied then it will enter the party.
+
+created a global static variable roomLimit.
+Before a block can be entered it checks the amount of people in the room. This is already in a synchronized block.
+therefore this variable is thread safe.
+
