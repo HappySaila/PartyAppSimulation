@@ -18,12 +18,13 @@ Done
 	venue, those inside, and those who have left.
 • [Once you have done the above] Limit the number people allowed into the
 room at one time and make people wait to enter if the room is full.
+• People should enter in the order in which they arrived.
 
 
 Not Done
 
 
-• People should enter in the order in which they arrived.
+
 
 
 
@@ -47,4 +48,8 @@ if the lock is not occupied then it will enter the party.
 created a global static variable roomLimit.
 Before a block can be entered it checks the amount of people in the room. This is already in a synchronized block.
 therefore this variable is thread safe. The people are waiting for the lock to be realeased and are therefore not spinning.
+if a room limit is not specified then
+
+added a blocking queue class. people who arrive at the party get added to the queue.
+people who enter the party get removed from the queue.
 

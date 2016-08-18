@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a0b2c65-43a3-4e3d-b1be-b438efbed03a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/Queue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/GridBlock.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/GridBlock.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$1.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$2.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$3.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/Person.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/Person.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PersonMover.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PersonMover.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/RoomGrid.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/RoomGrid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/outOfGridBoundsException.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/outOfGridBoundsException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/GridBlock.java" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/GridBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/Queue.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/Queue.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/Person.java" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/Person.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/PersonMover.java" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/PersonMover.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/RoomGrid.java" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/RoomGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/Queue.java" afterPath="$PROJECT_DIR$/src/animationSkeletonCode/Queue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ConcurrencyPrac.iws" />
@@ -51,23 +46,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartyApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PartyApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="41" selection-start-line="172" selection-start-column="41" selection-end-line="172" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.475">
+              <caret line="176" column="31" selection-start-line="176" selection-start-column="31" selection-end-line="176" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonMover.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonMover.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/PersonMover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.525">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.689655">
+              <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Queue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/Queue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/Person.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -138,13 +147,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/animationSkeletonCode/Queue.java" />
         <option value="$PROJECT_DIR$/src/animationSkeletonCode/RoomGrid.java" />
         <option value="$PROJECT_DIR$/src/animationSkeletonCode/PeopleCounter.java" />
         <option value="$PROJECT_DIR$/src/animationSkeletonCode/GridBlock.java" />
         <option value="$PROJECT_DIR$/src/animationSkeletonCode/Person.java" />
-        <option value="$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java" />
+        <option value="$PROJECT_DIR$/src/animationSkeletonCode/Queue.java" />
         <option value="$PROJECT_DIR$/src/animationSkeletonCode/PersonMover.java" />
+        <option value="$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java" />
       </list>
     </option>
   </component>
@@ -198,10 +207,10 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ConcurrentPractice" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Party2">
+  <component name="RunManager" selected="Application.Party">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -458,7 +467,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="animationSkeletonCode.PartyApp" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="100 25 25" />
+      <option name="PROGRAM_PARAMETERS" value="1000 25 25" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -504,12 +513,12 @@
       <workItem from="1471265348674" duration="117000" />
       <workItem from="1471425539213" duration="5443000" />
       <workItem from="1471435839815" duration="6930000" />
-      <workItem from="1471510419197" duration="1963000" />
+      <workItem from="1471510419197" duration="4233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14718000" />
+    <option name="totallyTimeSpent" value="16988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
@@ -735,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/Queue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45972496">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/RoomGrid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -761,14 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/PeopleCounter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -779,21 +773,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java">
+    <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="41" selection-start-line="172" selection-start-column="41" selection-end-line="172" selection-end-column="41" />
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/PersonMover.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.525">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.689655">
+          <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.475">
+          <caret line="176" column="31" selection-start-line="176" selection-start-column="31" selection-end-line="176" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

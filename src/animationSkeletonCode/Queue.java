@@ -9,5 +9,16 @@ import java.util.concurrent.BlockingQueue;
 public class Queue {
     //will create a concurrent blocking queue to make sure the people who arrive at the door
     //enter in that order
-    private BlockingQueue<PersonMover> queue = new ArrayBlockingQueue<PersonMover>(10);
+    private BlockingQueue<PersonMover> queue;
+    public Queue(int guests){
+        queue = new ArrayBlockingQueue<PersonMover>(guests);
+    }
+
+    public void arrived(PersonMover person) throws InterruptedException{
+        queue.put(person);
+    }
+
+    public PersonMover enter() throws InterruptedException{
+        return queue.take();
+    }
 }

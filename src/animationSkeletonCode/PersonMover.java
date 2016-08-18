@@ -82,6 +82,8 @@ public class PersonMover extends Thread {
 		
 		try {
 			sleep(rand.nextInt(10000)); //time till arriving at party
+			//arrived at the party, so add to queue
+			PartyApp.queue.arrived(this);
 			//to make sure that people cant enter the party if the simulation is paused
 			synchronized (PartyApp.pause){
 				while(PartyApp.pause.get()==true){
@@ -98,7 +100,8 @@ public class PersonMover extends Thread {
 				while(firstBlock.getStatus()==true || (counter.getInside()>=PartyApp.roomLimit)){
 					entranceLock.wait();
 				}
-				System.out.println("counter :"+counter.getInside()+"limit: "+PartyApp.roomLimit);
+				//pop person from the queue
+				PartyApp.queue.enter();
 				firstBlock.waitBlock(); //threads should wait until first block is free
 			}
 

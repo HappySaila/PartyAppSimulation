@@ -8,12 +8,12 @@ public class Person {
 	GridBlock currentBlock;
 		
 	private int movingSpeed;
-	private static int maxWait=15;
-	private static int minWait=1;
+	private static int maxWait=1500;
+	private static int minWait=100;
 	private int X;
 	private int Y;
 	
-	private static Random rand = new Random();	;
+	private static Random rand = new Random();
 	
 	private Color myColor;
 	private boolean inRoom;

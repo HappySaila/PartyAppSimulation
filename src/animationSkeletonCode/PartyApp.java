@@ -40,6 +40,7 @@ public class PartyApp {
 
 	public static AtomicBoolean pause = new AtomicBoolean(false);
 	public static int roomLimit;
+	public static Queue queue;
 
 	
 	
@@ -169,8 +170,13 @@ public class PartyApp {
 		//deal with command line arguments
 		noPeople=Integer.parseInt(args[0]);  //total people to enter room
 		gridX=Integer.parseInt(args[1]); // No. of X grid cells  
-		gridY=Integer.parseInt(args[2]); // No. of Y grid cells  
-		roomLimit=Integer.parseInt(args[3]);
+		gridY=Integer.parseInt(args[2]); // No. of Y grid cells
+		if (args.length>3){
+			roomLimit=Integer.parseInt(args[3]);
+		}else{
+			roomLimit=noPeople;
+		}
+		queue = new Queue(noPeople);
 		//hardcoded exits
 		int [][] exits = {{0,(int) gridY/2-1},
 							{0,(int) gridY/2},  //two-cell wide door on left
