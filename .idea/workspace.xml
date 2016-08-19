@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a0b2c65-43a3-4e3d-b1be-b438efbed03a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/animationSkeletonCode/CounterDisplay.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/animationSkeletonCode/GridBlock.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/animationSkeletonCode/PeopleCounter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/animationSkeletonCode/Person.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/animationSkeletonCode/RoomGrid.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/CounterDisplay.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/GridBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/PartyApp.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/PeopleCounter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/Person.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/PersonMover.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/Queue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/RoomGrid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/animationSkeletonCode/RoomPanel.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$1.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$2.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$3.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PartyApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PersonMover.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/PersonMover.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/Queue.class" afterPath="$PROJECT_DIR$/out/production/Concurrency/animationSkeletonCode/Queue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/makefile" afterPath="$PROJECT_DIR$/makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PartyApp.java" afterPath="$PROJECT_DIR$/src/PartyApp.java" />
     </list>
     <ignored path="ConcurrencyPrac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,13 +28,15 @@
       <file leaf-file-name="PartyApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PartyApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2993763">
-              <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.63529414">
+              <caret line="122" column="23" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
               <folding>
-                <element signature="e#3053#3717#0" expanded="true" />
-                <element signature="e#3716#3717#0" expanded="true" />
-                <element signature="e#3858#4197#0" expanded="true" />
-                <element signature="e#4196#4197#0" expanded="true" />
+                <element signature="e#2257#2897#0" expanded="true" />
+                <element signature="e#2896#2897#0" expanded="true" />
+                <element signature="e#3054#4058#0" expanded="true" />
+                <element signature="e#4057#4058#0" expanded="true" />
+                <element signature="e#4199#4538#0" expanded="true" />
+                <element signature="e#4537#4538#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -525,16 +506,16 @@
       <workItem from="1471517785786" duration="16000" />
       <workItem from="1471606010773" duration="1514000" />
       <workItem from="1471631248621" duration="323000" />
-      <workItem from="1471633043594" duration="3672000" />
+      <workItem from="1471633043594" duration="3853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22540000" />
+    <option name="totallyTimeSpent" value="22721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -544,7 +525,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2495114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -674,13 +655,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PartyApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2993763">
-          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.63529414">
+          <caret line="122" column="23" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
           <folding>
-            <element signature="e#3053#3717#0" expanded="true" />
-            <element signature="e#3716#3717#0" expanded="true" />
-            <element signature="e#3858#4197#0" expanded="true" />
-            <element signature="e#4196#4197#0" expanded="true" />
+            <element signature="e#2257#2897#0" expanded="true" />
+            <element signature="e#2896#2897#0" expanded="true" />
+            <element signature="e#3054#4058#0" expanded="true" />
+            <element signature="e#4057#4058#0" expanded="true" />
+            <element signature="e#4199#4538#0" expanded="true" />
+            <element signature="e#4537#4538#0" expanded="true" />
           </folding>
         </state>
       </provider>

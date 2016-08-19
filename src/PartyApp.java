@@ -39,6 +39,7 @@ public class PartyApp {
 
 	public static int roomLimit;
 	public static Queue queue;
+    static boolean started;
 
 	
 	
@@ -77,7 +78,6 @@ public class PartyApp {
         
 			// add the listener to the jbutton to handle the "pressed" event
 			startB.addActionListener(new ActionListener() {
-				boolean started=false;
 		      public void actionPerformed(ActionEvent e)  {
 				  if (!Person.pause.get()){
 					  if (!started) {
@@ -106,22 +106,25 @@ public class PartyApp {
 			// add the listener to the jbutton to handle the "pressed" event
 			pauseB.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
+                  if (started){
+                      synchronized (Person.pause){
+                          if (Person.pause.get()==false){
+                              //not paused and we want to pause the game
+                              Person.pause.set(true);
+                              //game is now paused, change button label
+                              pauseB.setText("Resume");
+                          }else if(Person.pause.get()==true){
+                              //the game is paused and we want to unpause
+                              Person.pause.set(false);
+                              //game is now resumed
+                              pauseB.setText("Pause");
+                              Person.pause.notifyAll();
+                          }
+                      }
+                  }
 		    	  	//TODO fill in code here to create
 		    	  // pause/resume button that works
-				  synchronized (Person.pause){
-					  if (Person.pause.get()==false){
-						  //not paused and we want to pause the game
-						  Person.pause.set(true);
-						  //game is now paused, change button label
-						  pauseB.setText("Resume");
-					  }else if(Person.pause.get()==true){
-						  //the game is paused and we want to unpause
-						  Person.pause.set(false);
-						  //game is now resumed
-						  pauseB.setText("Pause");
-						  Person.pause.notifyAll();
-					  }
-				  }
+
 		      }
 		    });
 			
