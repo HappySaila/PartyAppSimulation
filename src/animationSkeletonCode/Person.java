@@ -2,6 +2,7 @@ package animationSkeletonCode;
 
 import java.awt.Color;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Person {
 
@@ -19,8 +20,11 @@ public class Person {
 	private boolean inRoom;
 	private boolean thirsty;
 
+	public static AtomicBoolean pause = new AtomicBoolean(false);
 
-	
+
+
+
 	Person() {
 		movingSpeed=(int)(Math.random() * (maxWait-minWait)+minWait); 
 		float c = rand.nextFloat();
@@ -42,10 +46,10 @@ public class Person {
 	
 	public  boolean moveToBlock(GridBlock newBlock)  {
 		//System.out.println("Attempting transfer...from x,y"+X+","+Y +"to x,y"+newBlock.getX()+","+newBlock.getY()); //debug
-		synchronized (PartyApp.pause){
-			while (PartyApp.pause.get()==true){
+		synchronized (pause){
+			while (pause.get()==true){
 				try {
-					PartyApp.pause.wait();
+					pause.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

@@ -16,8 +16,7 @@ public class PersonMover extends Thread {
 	private int ID; //thread ID for debugging
 
 	//my variables
-	public static Object entranceLock = new Object();
-	
+
 	PersonMover( Person janeDoe) {
 		thisPerson = janeDoe;
 		rand = new Random();	
@@ -85,9 +84,9 @@ public class PersonMover extends Thread {
 			//arrived at the party, so add to queue
 			PartyApp.queue.arrived(this);
 			//to make sure that people cant enter the party if the simulation is paused
-			synchronized (PartyApp.pause){
-				while(PartyApp.pause.get()==true){
-					PartyApp.pause.wait();
+			synchronized (Person.pause){
+				while(Person.pause.get()==true){
+					Person.pause.wait();
 				}
 			}
 
@@ -96,9 +95,9 @@ public class PersonMover extends Thread {
 			GridBlock firstBlock =grid.getEntranceBlock(); //enter through entrance
 			assert(firstBlock!=null);
 
-			synchronized (entranceLock){
+			synchronized (GridBlock.entranceLock){
 				while(firstBlock.getStatus()==true || (counter.getInside()>=PartyApp.roomLimit)){
-					entranceLock.wait();
+					GridBlock.entranceLock.wait();
 				}
 				//pop person from the queue
 				PartyApp.queue.enter();

@@ -81,7 +81,8 @@ vpath %.class $(BINDIR)
 
 #default rule - will be invoked by make
 
-all: GridBlock.class PauseLock.class Person.class PeopleCounter.class RoomGrid.class PersonMover.class Queue.class RoomPanel.class CounterDisplay.class PartyApp.class\
+all: GridBlock.class PauseLock.class Person.class PeopleCounter.class RoomGrid.class PersonMover.class Queue.class\
+ RoomPanel.class CounterDisplay.class PartyApp.class\
 
 # Rules for generating documentation
 doc:
@@ -107,5 +108,3 @@ clean:
 	@rm -Rf doc
 	@echo "all is clean-"
 
-
-q

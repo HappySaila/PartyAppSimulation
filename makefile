@@ -26,7 +26,8 @@ vpath %.class $(BINDIR)
 
 #default rule - will be invoked by make
 
-all: \
+all: PeopleCounter.class CounterDisplay.class GridBlock.class RoomGrid.class Person.class PersonMover.class\
+ Queue.class RoomPanel.class PartyApp.class\
 
 # Rules for generating documentation
 doc:

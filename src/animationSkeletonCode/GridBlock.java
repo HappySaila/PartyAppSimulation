@@ -9,7 +9,10 @@ public class GridBlock {
 	private final boolean isRefreshmentStation;
 	private int ID;
 	private int [] coords;
-	
+
+	public static Object entranceLock = new Object();
+
+
 	GridBlock(boolean exitBlock, boolean refreshBlock) {
 		occupied.set(false);
 		isExit=exitBlock;
@@ -44,9 +47,9 @@ public class GridBlock {
 		
 	public synchronized void releaseBlock() {
 		//once they have left the block
-		synchronized (PersonMover.entranceLock){
+		synchronized (entranceLock){
 			occupied.set(false);
-			PersonMover.entranceLock.notifyAll();
+			entranceLock.notifyAll();
 		}
 	}
 	
