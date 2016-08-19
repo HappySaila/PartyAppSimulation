@@ -26,7 +26,8 @@ vpath %.class $(BINDIR)
 
 #default rule - will be invoked by make
 
-all: \
+all: PeopleCounter.class CounterDisplay.class GridBlock.class RoomGrid.class Person.class PersonMover.class\
+ Queue.class RoomPanel.class PartyApp.class\
 
 # Rules for generating documentation
 doc:
@@ -56,7 +57,7 @@ clean:
 # Makefile for Concurrency Prac
 
 LIB = ../lib
-SRCDIR = src/animationSkeletonCode
+SRCDIR = src
 BINDIR = bin
 TESTDIR = test
 DOCDIR = doc
@@ -73,33 +74,13 @@ JFLAGS = -g -d $(BINDIR) -cp $(BINDIR):$(JUNIT)
 vpath %.java $(SRCDIR):$(TESTDIR)
 vpath %.class $(BINDIR)
 
-# define general build rule for java sources
-.SUFFIXES:  .java  .class
 
-.java.class:
-	$(JAVAC)  $(JFLAGS)  $<
 
 #default rule - will be invoked by make
 
-all: GridBlock.class PauseLock.class Person.class PeopleCounter.class RoomGrid.class PersonMover.class Queue.class\
+all: GridBlock.class Person.class PeopleCounter.class RoomGrid.class PersonMover.class Queue.class\
  RoomPanel.class CounterDisplay.class PartyApp.class\
 
-# Rules for generating documentation
-doc:
-	javadoc -d $(DOCDIR) $(SRCDIR)/*.java $(TESTDIR)/*.java
-
-# Rules for unit testing
-test_classes: all
-
-test: test_classes
-	java -cp $(BINDIR):$(JUNIT) org.junit.runner.JUnitCore TestSuite
-	
-# Rules for generating tests
-jacoco.exec: test_classes
-	java -javaagent:$(LIB)/jacoco/jacocoagent.jar -cp $(BINDIR):$(JUNIT) org.junit.runner.JUnitCore TestSuite
-
-report: jacoco.exec
-	java -cp $(BINDIR):$(CLI):$(JACOCO):$(ASM):$(TOOLS) Report --reporttype html .
 
 clean:
 	@rm -f  $(BINDIR)/*.class
@@ -107,4 +88,8 @@ clean:
 	@rm -Rf coveragereport
 	@rm -Rf doc
 	@echo "all is clean-"
+run: all
+	java -cp $(BINDIR) PartyApp 100 10 10
+
+
 

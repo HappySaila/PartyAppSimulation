@@ -53,3 +53,5 @@ if a room limit is not specified then
 added a blocking queue class. people who arrive at the party get added to the queue.
 people who enter the party get removed from the queue.
 
+made sure that the game has to be resumed in order to start the game
+
