@@ -3,10 +3,14 @@ import java.awt.Color;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class Person {
+public class Person extends Thread{
 
 	GridBlock currentBlock;
-		
+
+	public int getMovingSpeed() {
+		return movingSpeed;
+	}
+
 	private int movingSpeed;
 	private static int maxWait=1500;
 	private static int minWait=100;
@@ -49,6 +53,13 @@ public class Person {
 			while (pause.get()==true){
 				try {
 					pause.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			if (!freed){
+				try {
+					sleep(getMovingSpeed());
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

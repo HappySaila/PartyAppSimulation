@@ -36,22 +36,28 @@ public class PersonMover extends Thread {
 	
 	private void headForRefreshments() {  //next move towards bar
 		//no need to change this function
+		int roomArea = grid.getMaxX()*grid.getMaxY();
+		int[] randomMove = {-1, 1};
+		Random rand = new Random();
 		int x_mv=-1;
 		int y_mv=-1;
 		GridBlock nextBlock =null;
 		while (nextBlock==null) { // repeat until hit on empty cell
-			
+
 			x_mv= rand.nextInt(3)-1+thisPerson.getX();
 			if (x_mv<0) x_mv=0;
-			
-			y_mv=thisPerson.getY()+1;
-			if (y_mv<0) y_mv=0;		
-			else if (y_mv>=grid.getMaxY()) y_mv=grid.getMaxY()-1;	
-			
+			if (counter.getInside() > roomArea*0.7){
+				y_mv=thisPerson.getY()+randomMove[rand.nextInt(2)];
+			}else{
+				y_mv=thisPerson.getY()+1;
+			}
+			if (y_mv<0) y_mv=0;
+			else if (y_mv>=grid.getMaxY()) y_mv=grid.getMaxY()-1;
+
 			if (!((x_mv==thisPerson.getX())&&(y_mv==thisPerson.getY()))) {
 				nextBlock=grid.getBlock(x_mv,y_mv);
-			} 
-		}	
+			}
+		}
 		thisPerson.moveToBlock(nextBlock);
 	}
 	
@@ -87,7 +93,6 @@ public class PersonMover extends Thread {
 					Person.pause.wait();
 				}
 			}
-
 			counter.personArrived(); //add to counter
 
 			GridBlock firstBlock =grid.getEntranceBlock(); //enter through entrance
