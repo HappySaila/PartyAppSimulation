@@ -12,10 +12,11 @@ public class Person extends Thread{
 	}
 
 	private int movingSpeed;
-	private static int maxWait=1500;
-	private static int minWait=100;
+	private static int maxWait=10;
+	private static int minWait=0;
 	private int X;
 	private int Y;
+	private boolean freed;
 	
 	private static Random rand = new Random();
 	
@@ -53,13 +54,15 @@ public class Person extends Thread{
 			while (pause.get()==true){
 				try {
 					pause.wait();
+					freed = true;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
-			if (!freed){
+			if (freed){
 				try {
-					sleep(getMovingSpeed());
+					sleep(rand.nextInt(100));
+					freed=false;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -115,8 +118,6 @@ public class Person extends Thread{
 	public  void setColor(Color c) {
 		myColor=c;
 	}
-	
-
 
 
 	}
